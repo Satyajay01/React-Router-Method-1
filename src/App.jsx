@@ -1,30 +1,29 @@
-import React from 'react'
-import NavBar from './Components/NavBar'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './Pages/Home'
-import Login from './Pages/Login'
-import About from './Pages/About'
-
-
+import NavBar from "./Components/NavBar"
+import Home from "./Pages/Home"
+import About from "./Pages/About"
+import Contact from "./Pages/Contact"
+import { createBrowserRouter} from "react-router-dom"
+import { RouterProvider} from "react-router-dom"
 const App = () => {
   const router = createBrowserRouter([
-    { path: "/",
-      element: <Home/> 
+    {
+      path: "/",
+      element: <><NavBar/><Home/></>
     },
-    { path: "/Login",
-      element: <Login/> 
+    {
+      path: "/about",
+      element: <><NavBar/><About/></>
     },
-    { path: "/About",
-      element: <About/> 
-    },
-    
+    {
+      path: "/contact",
+      element: <><NavBar/><Contact/></>
+    }
+
   ])
   return (
-    <>
-
-    <NavBar/>
-    <RouterProvider router={router} />
-    </>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   )
 }
 
